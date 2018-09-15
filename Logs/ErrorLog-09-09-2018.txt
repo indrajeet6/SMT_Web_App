@@ -1,0 +1,6 @@
+Log Entry : 05:22:09 PM 09 September 2018
+SMT Web Form:   at SMT_Web_Form._Default.Page_Load(Object sender, EventArgs e) in C:\Users\Indrajeet\Desktop\Visual Studio Practice\C# Projects\SMT\SMT Web Form\SMT Web Form\Home Page.aspx.cs:line 36:Object reference not set to an instance of an object.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Log Entry : 05:22:23 PM 09 September 2018
+SMT Web Form:   at SMT_Web_Form._Default.Page_Load(Object sender, EventArgs e) in C:\Users\Indrajeet\Desktop\Visual Studio Practice\C# Projects\SMT\SMT Web Form\SMT Web Form\Home Page.aspx.cs:line 36:Object reference not set to an instance of an object.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
