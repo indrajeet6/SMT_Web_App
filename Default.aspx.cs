@@ -37,14 +37,7 @@ namespace SMT_Web_Form
             }
             catch (Exception ex)
             {
-                string n = ex.Message;
-                string strLogFilePath = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, @"Logs\ErrorLog-" + DateTime.Today.Date.ToShortDateString().ToString()+ ".txt");
-                StreamWriter w = File.AppendText(strLogFilePath);
-                w.Write("Log Entry : ");
-                w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
-                w.WriteLine("{0}:{1}:{2}", ex.Source,ex.StackTrace,ex.Message);
-                w.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                w.Close();
+                
             }
             
             

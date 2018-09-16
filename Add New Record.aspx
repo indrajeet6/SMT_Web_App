@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>SMT Master Application</h1>
-        <p class="lead">This is a Proof of Concept regarding making a Web Forms Application for the SMT Team.</p>
+        <h1>Incident Management Master Application</h1>
+        <p class="lead">This is a Proof of Concept regarding making a Web Forms Application for the Incident Management Team.</p>
         <table id ="Table1">
             <tr>
                 <th style="width: 303px">Data Point</th>
