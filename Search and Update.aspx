@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>SMT Master Application</h1>
+        <h1>Incident Management Master Application</h1>
         
         <table>
             <tr>
