@@ -29,25 +29,25 @@
                 <th style="width: 330px">Value</th>
             </tr>
             <tr>
-                <td style="width: 303px">INC Number</td>
+                <td style="width: 303px">Incident Number (INCxxxx)</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox2" runat="server" Width="295px"></asp:TextBox>
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Contract</td>
+                <td style="width: 303px">Contract Signed</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox3" runat="server" Width="295px"></asp:TextBox>
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Supplier</td>
+                <td style="width: 303px">Customer Name</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox4" runat="server" Width="295px"></asp:TextBox>
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Intake Received Date (mm/dd/yyyy)</td>
+                <td style="width: 303px">Incident Received Date (mm/dd/yyyy)</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox5" runat="server" Width="295px"></asp:TextBox>
                         </td>
@@ -59,31 +59,31 @@
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Requestor</td>
+                <td style="width: 303px">Engineer</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox7" runat="server" Width="295px"></asp:TextBox>
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">6109</td>
+                <td style="width: 303px">Form 1</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox8" runat="server" Width="295px"></asp:TextBox>
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Invoice/6108 (Yes/No)</td>
+                <td style="width: 303px">Form 2 (Yes/No)</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox9" runat="server" Width="295px"></asp:TextBox>
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">W9/W8</td>
+                <td style="width: 303px">Form 3</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox10" runat="server" Width="295px"></asp:TextBox>
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Invoice Count</td>
+                <td style="width: 303px">Incident Count</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox11" runat="server" Width="295px"></asp:TextBox>
                         </td>
@@ -95,7 +95,7 @@
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Invoice Received Date</td>
+                <td style="width: 303px">Invoice Date</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox13" runat="server" Width="295px"></asp:TextBox>
                         </td>
@@ -107,7 +107,7 @@
                         </td>
             </tr>
             <tr>
-                <td style="width: 303px">Issue</td>
+                <td style="width: 303px">Issues</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox15" runat="server" Width="295px"></asp:TextBox>
                         </td>
