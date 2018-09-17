@@ -27,7 +27,18 @@ namespace SMT_Web_Form
             }
             connINC.Close();
 
-            string strNewINC = ("INC" + (Convert.ToInt32(strVal.Replace("INC", "")) + 1)).ToString();
+            int intTempNo = Convert.ToInt32(strVal.Replace("INC", ""))+1;
+            int intLen = 4- intTempNo.ToString().Length;
+            string strINCNo = string.Empty;
+            if (intLen>0)
+            {
+                for (int i=0;i<intLen;i++)
+                {
+                    strINCNo = strINCNo + "0";
+                }
+                strINCNo = strINCNo + intTempNo;
+            }
+            string strNewINC = "INC" + strINCNo;
             lblINCNo.Text = strNewINC;
 
 

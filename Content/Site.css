@@ -20,6 +20,8 @@ textarea {
 table {
     padding: 20px;
     border: 1px solid black;
+    height: 7px;
+    width: 634px;
 }
 
 td {
