@@ -5,6 +5,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace SMT_Web_Form
 {
@@ -15,7 +16,7 @@ namespace SMT_Web_Form
             TextBox1.Text = TextBox1.Text.ToUpper();
             string strINCNumber = TextBox1.Text;
             //Response.Write("<script>alert('Incident Number is " + strINCNumber +"');</script>");
-            string ConnString = @"Server=tcp:indrajeet.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string ConnString = @"Server=tcp:incident.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             string strSQLcmd = "Exec Get_Record " + TextBox1.Text;
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
@@ -85,18 +86,32 @@ namespace SMT_Web_Form
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             string strINCNumber = TextBox1.Text;
-            //Response.Write("<script>alert('Incident Number is " + strINCNumber +"');</script>");
-            string args = "'"+ TextBox2.Text + "', '" + TextBox3.Text + "', '" + TextBox4.Text + "', '" + TextBox5.Text + "', '" + TextBox6.Text + "', '" + TextBox7.Text + "', '" + TextBox8.Text + "', '" + TextBox9.Text + "', '" + TextBox10.Text + "', '" + TextBox11.Text + "', '" + TextBox12.Text + "', '" + TextBox13.Text + "', '" + TextBox14.Text + "', '" + TextBox15.Text + "', '" + TextBox16.Text + "', '" + TextBox17.Text + "', '" + TextBox18.Text + "', '" + TextBox19.Text + "', '" + TextBox20.Text + "', '" + TextBox21.Text + "', '" + TextBox22.Text + "', '" + TextBox23.Text+"'";
-            args.Replace("\"", "''");
-            string ConnString = @"Server=tcp:indrajeet.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            string strSQLcmd = "Exec Insert_Record " + args;
-            SqlConnection conn = new SqlConnection(ConnString);
-            SqlCommand sqlComm = new SqlCommand();
-            sqlComm.CommandText = strSQLcmd;
-            sqlComm.Connection = conn;
-            conn.Open();
-            sqlComm.ExecuteNonQuery();
-            conn.Close();
+            try
+            {
+                //Response.Write("<script>alert('Incident Number is " + strINCNumber +"');</script>");
+                
+                //CultureInfo us = new CultureInfo("en-US");
+                //DateTime dtDate = DateTime.Parse(TextBox5.Value,us);
+                //if (dtDate==null)
+                //{
+                //    Response.Write("Please Enter a Valid date");
+                //}
+                string args = "'" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + TextBox4.Text + "', '" + TextBox5.Text + "', '" + TextBox6.Text + "', '" + TextBox7.Text + "', '" + TextBox8.Text + "', '" + TextBox9.Text + "', '" + TextBox10.Text + "', '" + TextBox11.Text + "', '" + TextBox12.Text + "', '" + TextBox13.Text + "', '" + TextBox14.Text + "', '" + TextBox15.Text + "', '" + TextBox16.Text + "', '" + TextBox17.Text + "', '" + TextBox18.Text + "', '" + TextBox19.Text + "', '" + TextBox20.Text + "', '" + TextBox21.Text + "', '" + TextBox22.Text + "', '" + TextBox23.Text + "'";
+                args.Replace("\"", "''");
+                string ConnString = @"Server=tcp:incident.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                string strSQLcmd = "Exec Insert_Record " + args;
+                SqlConnection conn = new SqlConnection(ConnString);
+                SqlCommand sqlComm = new SqlCommand();
+                sqlComm.CommandText = strSQLcmd;
+                sqlComm.Connection = conn;
+                conn.Open();
+                sqlComm.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Exception: " + ex.Message);
+            }
         }
     }
 }

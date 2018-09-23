@@ -14,7 +14,7 @@ namespace SMT_Web_Form
         protected void Page_Load(object sender, EventArgs e) 
         {
 
-            string ConnString = @"Server=tcp:indrajeet.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string ConnString = @"Server=tcp:incident.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             string strSQLcmd = "SELECT MAX(INC) FROM dbo.SMT_Data";
             SqlConnection conn = new SqlConnection(ConnString);
             SqlCommand sqlComm = new SqlCommand();
