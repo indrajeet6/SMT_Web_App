@@ -50,7 +50,7 @@
                 <td style="width: 303px">Incident Received Date (mm/dd/yyyy)</td>
                 <td style="width: 330px">
                         <asp:TextBox ID="TextBox5" runat="server" Width="295px"></asp:TextBox>
-                        &nbsp;</td>
+                 </td>
             </tr>
             <tr>
                 <td style="width: 303px">Rush</td>
