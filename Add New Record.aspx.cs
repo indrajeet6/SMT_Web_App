@@ -13,7 +13,7 @@ namespace SMT_Web_Form
         protected void btnAdd_Click(object sender, EventArgs e)
         {
             //lblINCNo.Text = "This is a Test";
-            string ConnString = @"Server=tcp:incident.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string ConnString = @"Server=MSI-LAPTOP;Database=SMT_DB;Trusted_Connection=True;";
             string strMaxINCNoCmd = "SELECT MAX(INC) FROM SMT_Data";
             SqlConnection connINC = new SqlConnection(ConnString);
             SqlDataAdapter adap = new SqlDataAdapter(strMaxINCNoCmd, connINC);

@@ -16,7 +16,7 @@ namespace SMT_Web_Form
             TextBox1.Text = TextBox1.Text.ToUpper();
             string strINCNumber = TextBox1.Text;
             //Response.Write("<script>alert('Incident Number is " + strINCNumber +"');</script>");
-            string ConnString = @"Server=tcp:incident.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string ConnString = @"Server=MSI-LAPTOP;Database=SMT_DB;Trusted_Connection=True;";
             string strSQLcmd = "Exec Get_Record " + TextBox1.Text;
             SqlConnection conn = new SqlConnection(ConnString);
             conn.Open();
@@ -98,7 +98,7 @@ namespace SMT_Web_Form
                 //}
                 string args = "'" + TextBox2.Text + "', '" + TextBox3.Text + "', '" + TextBox4.Text + "', '" + TextBox5.Text + "', '" + TextBox6.Text + "', '" + TextBox7.Text + "', '" + TextBox8.Text + "', '" + TextBox9.Text + "', '" + TextBox10.Text + "', '" + TextBox11.Text + "', '" + TextBox12.Text + "', '" + TextBox13.Text + "', '" + TextBox14.Text + "', '" + TextBox15.Text + "', '" + TextBox16.Text + "', '" + TextBox17.Text + "', '" + TextBox18.Text + "', '" + TextBox19.Text + "', '" + TextBox20.Text + "', '" + TextBox21.Text + "', '" + TextBox22.Text + "', '" + TextBox23.Text + "'";
                 args.Replace("\"", "''");
-                string ConnString = @"Server=tcp:incident.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+                string ConnString = @"Server=MSI-LAPTOP;Database=SMT_DB;Trusted_Connection=True;";
                 string strSQLcmd = "Exec Insert_Record " + args;
                 SqlConnection conn = new SqlConnection(ConnString);
                 SqlCommand sqlComm = new SqlCommand();

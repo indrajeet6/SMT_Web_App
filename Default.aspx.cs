@@ -6,6 +6,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.IO;
+using System.Configuration;
 
 namespace SMT_Web_Form
 {
@@ -13,8 +14,9 @@ namespace SMT_Web_Form
     {
         protected void Page_Load(object sender, EventArgs e) 
         {
-
-            string ConnString = @"Server=tcp:incident.database.windows.net,1433;Initial Catalog=SMT_DB;Persist Security Info=False;User ID=indrajeet6;Password=Indrani7&;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            /* Need to make code to get Connection String from External Web Config FIle instead of hard code.*/
+            string ConnString = @"Server=MSI-LAPTOP;Database=SMT_DB;Trusted_Connection=True;";
+            //string ConnString = ConfigurationManager.ConnectionStrings["Conn_String"].ConnectionString;
             string strSQLcmd = "SELECT MAX(INC) FROM dbo.SMT_Data";
             SqlConnection conn = new SqlConnection(ConnString);
             SqlCommand sqlComm = new SqlCommand();
