@@ -55,12 +55,11 @@ namespace SMT_Web_Form
             SqlCommand sqlGetINC = new SqlCommand();
             sqlComm.CommandText = strSQLcmd;
             sqlComm.Connection = conn;
-
-
-
             conn.Open();
             sqlComm.ExecuteNonQuery();
             conn.Close();
+
+            Response.Write("Incident has been recoded in system. Incident Number: " + strNewINC);
         }
     }
 
