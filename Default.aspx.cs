@@ -7,7 +7,6 @@ using System.Data.SqlClient;
 using System.Data;
 using System.IO;
 using System.Configuration;
-
 namespace SMT_Web_Form
 {
     public partial class _Default : Page
@@ -15,8 +14,10 @@ namespace SMT_Web_Form
         protected void Page_Load(object sender, EventArgs e) 
         {
             /* Need to make code to get Connection String from External Web Config FIle instead of hard code.*/
-            string ConnString = @"Server=MSI-LAPTOP;Database=SMT_DB;Trusted_Connection=True;";
-            //string ConnString = ConfigurationManager.ConnectionStrings["Conn_String"].ConnectionString;
+            //string ConnString = @"Server=MSI-LAPTOP;Database=SMT_DB;Trusted_Connection=True;";
+            Utilities Util = new Utilities();
+            string ConnString = Util.GetConnectionString();
+            
             string strSQLcmd = "SELECT MAX(INC) FROM dbo.SMT_Data";
             SqlConnection conn = new SqlConnection(ConnString);
             SqlCommand sqlComm = new SqlCommand();
@@ -37,7 +38,7 @@ namespace SMT_Web_Form
                 //Added the Try Catch Block to suppress the error that Label 2 is null when navigating away from the home page.
                 LblLastINCUsed.Text = strVal;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
             }
