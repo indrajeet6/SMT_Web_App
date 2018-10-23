@@ -46,7 +46,9 @@ namespace SMT_Web_Form
 
 
             //Response.Write("<script>alert('Incident Number is " + strINCNumber +"');</script>");
-            string args = "'" + lblINCNo.Text + "', '" + txtBox3.Text + "', '" + txtBox4.Text + "', '" + txtBox5.Text + "', '" + txtBox6.Text + "', '" + txtBox7.Text + "', '" + txtBox8.Text + "', '" + txtBox9.Text + "', '" + txtBox10.Text + "', '" + txtBox11.Text + "', '" + txtBox12.Text + "', '" + txtBox13.Text + "', '" + txtBox14.Text + "', '" + txtBox15.Text + "', '" + txtBox16.Text + "', '" + txtBox17.Text + "', '" + txtBox18.Text + "', '" + txtBox19.Text + "', '" + txtBox20.Text + "', '" + txtBox21.Text + "', '" + txtBox22.Text + "', '" + txtBox23.Text + "'";
+            string args = "'" + lblINCNo.Text + "', '" + txtBox3.Text + "', '" + txtBox4.Text + "', '" + txtBox5.Text + "', '" + txtBox6.Text + "', '" + txtBox7.Text + "', '" + txtBox8.Text + "', '" + txtBox9.Text + "', '" + 
+                txtBox10.Text + "', '" + txtBox11.Text + "', '" + txtBox12.Text + "', '" + txtBox13.Text + "', '" + txtBox14.Text + "', '" + txtBox15.Text + "', '" + txtBox16.Text + "', '" + txtBox17.Text + "', '" + 
+                txtBox18.Text + "', '" + txtBox19.Text + "', '" + txtBox20.Text + "', '" + txtBox21.Text + "', '" + txtBox22.Text + "', '" + txtBox23.Text + "'";
             args.Replace("\"", "''");
 
             string strDateVerify1 = Util.VerifyDate(txtBox5.Text);
