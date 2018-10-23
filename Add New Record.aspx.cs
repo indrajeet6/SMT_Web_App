@@ -16,7 +16,7 @@ namespace SMT_Web_Form
             //string ConnString = @"Server=MSI-LAPTOP;Database=SMT_DB;Trusted_Connection=True;";
             Utilities Util = new Utilities();
             string ConnString = Util.GetConnectionString();
-
+            
             string strMaxINCNoCmd = "SELECT MAX(INC) FROM SMT_Data";
             SqlConnection connINC = new SqlConnection(ConnString);
             SqlDataAdapter adap = new SqlDataAdapter(strMaxINCNoCmd, connINC);
@@ -48,18 +48,32 @@ namespace SMT_Web_Form
             //Response.Write("<script>alert('Incident Number is " + strINCNumber +"');</script>");
             string args = "'" + lblINCNo.Text + "', '" + txtBox3.Text + "', '" + txtBox4.Text + "', '" + txtBox5.Text + "', '" + txtBox6.Text + "', '" + txtBox7.Text + "', '" + txtBox8.Text + "', '" + txtBox9.Text + "', '" + txtBox10.Text + "', '" + txtBox11.Text + "', '" + txtBox12.Text + "', '" + txtBox13.Text + "', '" + txtBox14.Text + "', '" + txtBox15.Text + "', '" + txtBox16.Text + "', '" + txtBox17.Text + "', '" + txtBox18.Text + "', '" + txtBox19.Text + "', '" + txtBox20.Text + "', '" + txtBox21.Text + "', '" + txtBox22.Text + "', '" + txtBox23.Text + "'";
             args.Replace("\"", "''");
-            
-            string strSQLcmd = "Exec Insert_Record " + args;
-            SqlConnection conn = new SqlConnection(ConnString);
-            SqlCommand sqlComm = new SqlCommand();
-            SqlCommand sqlGetINC = new SqlCommand();
-            sqlComm.CommandText = strSQLcmd;
-            sqlComm.Connection = conn;
-            conn.Open();
-            sqlComm.ExecuteNonQuery();
-            conn.Close();
 
-            Response.Write("Incident has been recoded in system. Incident Number: " + strNewINC);
+            string strDateVerify1 = Util.VerifyDate(txtBox5.Text);
+            string strDateVerify2 = Util.VerifyDate(txtBox23.Text);
+
+            if (strDateVerify1 != "Date Verified" || strDateVerify2 != "Date Verified")
+            {
+                string strTemp = "Input Received Date - " + strDateVerify1 + " Intake Closed Date - " + strDateVerify2;
+                Response.Write("<script>alert('" + strTemp + "')</script>");
+                //RegisterStartupScript("DisplayError", "<script language=javascript>alert('Input Received Date - " + strDateVerify1 + " Intake Closed Date - '" + strDateVerify2 + "');</script>");
+            }
+            else
+            {
+                string strSQLcmd = "Exec Insert_Record " + args;
+                SqlConnection conn = new SqlConnection(ConnString);
+                SqlCommand sqlComm = new SqlCommand();
+                SqlCommand sqlGetINC = new SqlCommand();
+                sqlComm.CommandText = strSQLcmd;
+                sqlComm.Connection = conn;
+                conn.Open();
+                sqlComm.ExecuteNonQuery();
+                conn.Close();
+
+                Response.Write("<script>alert('Incident has been recorded in system. Incident Number: " + strNewINC + "')</script>");
+            }
+
+            
         }
     }
 
