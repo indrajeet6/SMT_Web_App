@@ -54,6 +54,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -115,6 +116,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Add New Record.aspx" />
+    <Content Include="Dashboards.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Search and Update.aspx" />
     <Content Include="favicon.ico" />
@@ -173,6 +175,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Add New Record.aspx.designer.cs">
       <DependentUpon>Add New Record.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards.aspx.cs">
+      <DependentUpon>Dashboards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboards.aspx.designer.cs">
+      <DependentUpon>Dashboards.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

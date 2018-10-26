@@ -32,7 +32,9 @@ th {
     border: 1px solid black;
     text-align:center;
 }
-
+h1{
+    text-align:center;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .jumbotron {
